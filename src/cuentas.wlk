@@ -9,9 +9,10 @@ object cuentaPepe{
 		saldo+=monto
 	}
 	method extraer(monto){
-		if(self.saldo()>monto){
+		if(self.saldo()<monto){
+			self.error('no hay saldo')
+		}
 		saldo-=monto
-	    }
     }	
 }
 object cuentaJulian{
@@ -23,10 +24,11 @@ object cuentaJulian{
 		saldo+=monto*0.8
 	}
 	method extraer(monto){
-		if(self.saldo()>monto+5){
-		saldo-=monto+5
-	    }
-    }
+		if(self.saldo()<monto + 5){
+			self.error('no hay saldo')
+		}
+		saldo-=monto + 5
+    }	
 }
 object cuentaDelPadre{
 	var saldo=0
